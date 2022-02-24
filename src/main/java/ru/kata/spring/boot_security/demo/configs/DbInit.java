@@ -34,10 +34,16 @@ public class DbInit implements CommandLineRunner {
         roleService.save(role1);
         roleService.save(role2);
         List<Role> u1roles = new ArrayList<>();
+        List<Role> u2roles = new ArrayList<>();
         u1roles.add(role1);
         u1roles.add(role2);
-        User user1 = new User("admin", "Igor", null, null, "admin", u1roles);
+        u2roles.add(role1);
+
+        User user1 = new User("admin", "admin", 47, "admin", "admin", u1roles);
+        User user2 = new User("user", "user", 47, "user", "user", u2roles);
+
         userService.save(user1);
+        userService.save(user2);
 
     }
 }

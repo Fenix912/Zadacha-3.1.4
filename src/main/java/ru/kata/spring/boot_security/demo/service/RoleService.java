@@ -16,4 +16,3 @@ public interface RoleService {
 
     List<Role> getDemandedRoles();
 }
-

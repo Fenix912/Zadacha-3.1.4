@@ -17,10 +17,10 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String username;
+    private String name;
     private String surname;
     private Integer age;
-    private String email;
+    private String username;
     private String password;
 
     @ManyToMany
@@ -32,14 +32,15 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String surname, Integer age, String email, String password, List<Role> roles) {
-        this.username = username;
+    public User(String name, String surname, Integer age, String username, String password, List<Role> roles) {
+        this.name = name;
         this.surname = surname;
         this.age = age;
-        this.email = email;
+        this.username = username;
         this.password = password;
         this.roles = roles;
     }
+
 
     public void setSurname(String surname) {
         this.surname = surname;
@@ -69,6 +70,10 @@ public class User implements UserDetails {
         return username;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -81,13 +86,8 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+
 
     public Collection<Role> getRoles() {
         return roles;
@@ -108,7 +108,6 @@ public class User implements UserDetails {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
                 ", roles=" + roles +
                 '}';
     }

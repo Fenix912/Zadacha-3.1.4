@@ -37,5 +37,3 @@ public class UserDetailsServiceImp implements UserDetailsService {
                 user.getAuthorities());
     }
 }
-
-

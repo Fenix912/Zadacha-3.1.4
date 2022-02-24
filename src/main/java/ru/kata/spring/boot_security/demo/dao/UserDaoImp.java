@@ -52,5 +52,3 @@ public class UserDaoImp implements UserDao {
         return user;
     }
 }
-
-
